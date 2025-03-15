@@ -2,7 +2,9 @@ import json
 import logging
 import os
 import random
+
 from dotenv import load_dotenv
+
 from src.external_api import currency_exchange_rate
 from src.list_currency import list_currency
 
@@ -44,7 +46,6 @@ dictionary_tr = dictionary_transactions(os.getenv("WAY_TRANSACTION"))
 
 
 def transactions_sum(dict_transaction: dict) -> float:
-
     """функция вычисляет сумму транзакций в рублях. Валюту пересчитывает по курсу"""
 
     summa_tr = 0
