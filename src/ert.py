@@ -1,6 +1,4 @@
-# # импортируем Pandas
 import pandas as pd
-
 
 # создаём DataFrame из списка словарей
 data = [

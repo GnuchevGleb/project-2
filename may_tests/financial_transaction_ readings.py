@@ -1,7 +1,7 @@
 import csv
 import os
-from dotenv import load_dotenv
 
+from dotenv import load_dotenv
 
 # определяем путь к файлу с транзакциями
 load_dotenv()

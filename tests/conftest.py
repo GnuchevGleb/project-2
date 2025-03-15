@@ -1,6 +1,6 @@
-import pytest
 import os
 
+import pytest
 from dotenv import load_dotenv
 
 
@@ -189,4 +189,4 @@ dictionary_tr = os.getenv("WAY_TRANSACTION_CSV")
 
 @pytest.fixture
 def tst_sv():
-    return dictionary_tr
+    return ()

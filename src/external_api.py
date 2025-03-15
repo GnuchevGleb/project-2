@@ -1,10 +1,10 @@
 import os
+
 import requests
 from dotenv import load_dotenv
 
 
 def currency_exchange_rate(currencys: str) -> float:
-
     """Функция конвертации валюты"""
 
     try:
