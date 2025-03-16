@@ -151,6 +151,10 @@ def test_transactions():
 
 
 @pytest.fixture
+def filter_status():
+    return "CANCELED"
+
+@pytest.fixture
 def filename_zero():
     return ()
 

@@ -6,8 +6,13 @@ import pandas as pd
 from dotenv import load_dotenv
 
 # определяем путь к файлу с транзакциями
-load_dotenv()
-way = os.getenv("WAY_TRANSACTION_CSV")
+current_dir = os.path.dirname(__file__)
+data_dir = os.path.join(current_dir, '..', 'data')
+print(data_dir) # путь до директории data
+
+way_json = os.path.join(data_dir, 'operations.json')
+way_csv = os.path.join(data_dir, 'transactions.csv')
+way_ex = os.path.join(data_dir, 'transactions_excel.xlsx')
 
 
 def list_transactions_csv(ways: str) -> dict or str:
@@ -23,6 +28,7 @@ def list_transactions_csv(ways: str) -> dict or str:
 
     with open(ways, "r", encoding="utf-8") as file:  # Открываем файл
         text = csv.DictReader(file, delimiter=";")
+        print(text)
         try:
             for rows in text:
                 if rows["id"].isdigit():
@@ -49,7 +55,7 @@ def list_transactions_csv(ways: str) -> dict or str:
     ##########################################################
 
 
-###list_tr_csv = list_transactions_csv(way)
+list_tr_csv = list_transactions_csv(way_csv)
 
 
 load_dotenv()
@@ -108,4 +114,4 @@ def list_transactions_json(ways: str) -> dict or str:
         print(text)
 
 
-list_tr_ex_json = list_transactions_json(way_json)
+#list_tr_ex_json = list_transactions_json(way_json)
